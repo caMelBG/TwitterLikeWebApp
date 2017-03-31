@@ -1,0 +1,24 @@
+﻿@model PagedList.IPagedList<NotificationViewModel>
+
+<style>
+    .notification-container {
+        border-radius: 10px;
+        background-color: beige;
+        height: 40px;
+        padding-top: 10px;
+    }
+</style>
+
+@section styles {
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+}
+
+@foreach(var item in Model)
+{
+    Html.RenderPartial("~/Views/Notification/Partial/_NotificationInformationPartil.cshtml", item);
+}
+
+<div class="text-center">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, pageSize = Model.PageSize }))
+</div>
+

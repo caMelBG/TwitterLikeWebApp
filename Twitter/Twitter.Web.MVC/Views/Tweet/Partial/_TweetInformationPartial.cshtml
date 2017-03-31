@@ -1,0 +1,34 @@
+﻿@model TweetViewModel
+
+<div class="container">
+    <div class="row tweet-content">
+        <div class="col-md-12">
+            <input type="hidden" value="@Model.Id" />
+            <div class="row">
+                <div class="col-md-12">
+                    @Html.HiddenFor(m => m.Author.Id)
+                    <img src="@Url.Action("Image", "User", new { @class = "test", id = Model.Author.AvatarId })" class="img-responsive pull-left" />
+                    @Html.LabelForModel(Model.Author.FullName, new { @class = "user-name" })
+                    <br />
+                    <input type="button" class="btn btn-default btn-user-info" value="@Model.Author.UserName" />
+                </div>
+            </div>
+            <span class="row">
+                @Model.Content
+            </span>
+            @Html.Label(Model.PostedOn.ToString("d MMM yyyy"), new { @class = "pull-left" })
+            @if (User.Identity.IsAuthenticated)
+            {
+                if (User.Identity.Name != Model.Author.UserName)
+                {
+                    @Html.Action("IsFavorite", "Tweet", new { id = Model.Id })
+                    @Html.Action("IsReTweeted", "Tweet", new { id = Model.Id })
+                }
+                else
+                {
+                    <input type="button" class="btn btn-sm btn-danger btn-edit pull-right" value="Edit" />
+                }
+            }
+        </div>
+    </div>
+</div>

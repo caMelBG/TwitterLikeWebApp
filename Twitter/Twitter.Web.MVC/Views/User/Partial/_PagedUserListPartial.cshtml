@@ -1,0 +1,21 @@
+﻿@model PagedList.IPagedList<UserViewModel>
+
+@foreach (var item in Model)
+{
+    Html.RenderPartial("~/Views/User/Partial/_UserInformationPartial.cshtml", item);
+}
+<div class="row">
+    <div class="col-md-12 text-center">
+        @Html.PagedListPager(Model,
+            page => Url.Action("GetUsersBySearchQuery", new { query = ViewData["Query"], page, pageSize = Model.PageSize }),
+                PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(
+                    new AjaxOptions()
+                    {
+                        HttpMethod = "GET",
+                        InsertionMode = InsertionMode.Replace,
+                        UpdateTargetId = "container-users"
+                    }))
+    </div>
+</div>
+
+<script src="~/Scripts/custom/paged-user-list.js"></script>

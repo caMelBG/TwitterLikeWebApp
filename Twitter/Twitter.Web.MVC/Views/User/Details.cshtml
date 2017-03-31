@@ -1,0 +1,41 @@
+﻿@model DetailsUserViewModel
+
+@section styles {
+    <link href="~/Content/User/details.css" rel="stylesheet" />
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 user-info">
+            @Html.Hidden("user-id", Model.Id, new { @class = "user-id", id = "user-id"})
+            <h4>
+                @Html.LabelForModel(Model.UserName)
+            </h4>
+            <img src="@Url.Action("Image", "User", new { id = Model.AvatarId })" class="img-responsive pull-left" id="img-user" />
+            @if (Model.UserName == User.Identity.Name)
+            {
+            <input type="button" class="btn btn-danger" id="btn-edit-profile" value="Edit Profile" />
+            }
+            else
+            {
+            <input type="button" class="btn btn-success" id="btn-send-message" value="Send message" />
+            }
+
+            <input type="button" class="btn btn-info" id="btn-tweets" value="Tweets" />
+            <input type="button" class="btn btn-info" id="btn-favorites" value="Favorites" />
+            <input type="button" class="btn btn-info" id="btn-followers" value="Followers" />
+            <input type="button" class="btn btn-info" id="btn-following" value="Following" />
+        </div>
+        <div class="col-md-9" id="content-container">
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <input type="button" value="View more" class="btn btn-info" id="btn-view-more" />
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/custom/profile-page.js"></script>
+}

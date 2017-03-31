@@ -1,0 +1,8 @@
+﻿@model IEnumerable<TweetViewModel>
+
+@foreach (var tweet in Model)
+{
+    Html.RenderPartial("~/Views/Tweet/Partial/_TweetInformationPartial.cshtml", tweet);
+}
+
+<script src="~/Scripts/custom/paged-tweet-list.js"></script>

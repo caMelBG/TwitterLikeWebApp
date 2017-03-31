@@ -1,0 +1,8 @@
+﻿@model IEnumerable<UserViewModel>
+
+@foreach(var user in Model)
+{
+    Html.RenderPartial("~/Views/User/Partial/_UserInformationPartial.cshtml", user);
+}
+
+<script src="~/Scripts/custom/paged-user-list.js"></script>

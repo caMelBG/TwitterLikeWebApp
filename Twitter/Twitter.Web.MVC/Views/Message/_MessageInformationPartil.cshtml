@@ -1,0 +1,11 @@
+﻿@model MessageViewModel
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            @Html.Label(Model.Sender.UserName)
+            @Html.Label(Model.Content)
+            @Html.Label(Model.PostedOn.ToString("d MMM yyyy"))
+        </div>
+    </div>
+</div>

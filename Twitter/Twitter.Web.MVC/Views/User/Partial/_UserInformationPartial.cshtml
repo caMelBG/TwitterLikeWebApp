@@ -1,0 +1,15 @@
+﻿@model UserViewModel
+
+<div class="table-bordered">
+    <input type="hidden" value="@Model.Id" />
+    <div>
+        @if (User.Identity.IsAuthenticated)
+        {
+            @Html.Action("GetFollowButton", "User", new { id = Model.Id})
+        }
+    </div>
+    <img src="@Url.Action("Image", "User", new { id = Model.AvatarId })" class="img-responsive pull-left user-img" />
+    @Html.LabelForModel(Model.FullName, new { @class = "user-name" })
+    <br />
+    <input type="button" class="btn btn-default btn-user-info" value="@Model.UserName" />
+</div>

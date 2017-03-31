@@ -1,0 +1,7 @@
+﻿.tweet-content {
+    height: 150px;
+    max-width: 450px;
+    width: 450px;
+    border-radius: 10px;
+    border: solid silver 2px;
+}

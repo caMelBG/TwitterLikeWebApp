@@ -1,0 +1,95 @@
+﻿#img-user {
+    max-height: 200px;
+    height: 200px;
+    width: 200px;
+}
+
+.user-info > .btn,
+#btn-view-more {
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-content {
+    text-align: left;
+}
+
+.user-info {
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: beige;
+}
+
+.table-bordered {
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: beige;
+}
+
+.user-img {
+    padding: 5px;
+    max-height: 70px;
+    max-width: 70px;
+    width: 70px;
+    height: 70px;
+}
+
+.user-name {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.btn-user-info, .btn-user-info:hover {
+    border: 0px;
+    background-color: beige;
+}
+
+.btn-follow {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.tweet-container {
+    border: solid 1px black;
+    border-radius: 10px;
+    background-color: beige;
+    padding: 0px;
+    padding-top: 1px;
+}
+
+.btn-sm {
+    width: 80px;
+    margin-left: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.tweet-content {
+    border-bottom: solid 1px gray;
+}
+
+img {
+    padding-top: 10px;
+    max-height: 75px;
+    height: 75px;
+    width: 75px;
+}
+
+.btn-user-info,
+.btn-user-info:hover,
+.btn-retweeted,
+.btn-retweeted:hover,
+.btn-favorited,
+.btn-favorited:hover,
+.btn-favorited,
+.btn-favorited:hover {
+    border-color: beige;
+    background-color: beige;
+}
+
+.user-name {
+    margin-top: 10px;
+    margin-left: 10px;
+}
